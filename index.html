@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inmobiliaria Bienes Raíces - Tu Próximo Hogar</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Estilos personalizados y configuración de Tailwind */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Ocultar scrollbars para el carrusel si se desea */
+        .image-carousel::-webkit-scrollbar {
+            display: none;
+        }
+        .image-carousel {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- =========== Header / Navegación =========== -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-slate-800">TuLogoAquí</a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#inicio" class="text-gray-600 hover:text-sky-600 transition duration-300">Inicio</a>
+                <a href="#propiedades" class="text-gray-600 hover:text-sky-600 transition duration-300">Propiedades</a>
+                <a href="#sobre-mi" class="text-gray-600 hover:text-sky-600 transition duration-300">Sobre Mí</a>
+                <a href="#contacto" class="bg-sky-600 text-white px-4 py-2 rounded-lg hover:bg-sky-700 transition duration-300">Contacto</a>
+            </div>
+            <!-- Botón de menú para móvil -->
+            <button id="mobile-menu-button" class="md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Menú desplegable para móvil -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="#inicio" class="block text-gray-600 hover:text-sky-600">Inicio</a>
+            <a href="#propiedades" class="block text-gray-600 hover:text-sky-600">Propiedades</a>
+            <a href="#sobre-mi" class="block text-gray-600 hover:text-sky-600">Sobre Mí</a>
+            <a href="#contacto" class="block bg-sky-600 text-white px-4 py-2 rounded-lg text-center hover:bg-sky-700">Contacto</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- =========== Sección Principal (Hero) =========== -->
+        <section id="inicio" class="hero-bg h-screen flex items-center justify-center text-white">
+            <div class="bg-black/50 absolute inset-0"></div>
+            <div class="text-center z-10 p-6">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Encuentra el lugar que llamarás hogar</h1>
+                <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">Tu próximo gran capítulo empieza aquí. Explora las mejores propiedades en las zonas más exclusivas.</p>
+                <div class="bg-white/90 p-4 rounded-lg shadow-xl max-w-3xl mx-auto backdrop-blur-sm">
+                    <form class="flex flex-col md:flex-row gap-4">
+                        <input type="text" placeholder="Ciudad, Barrio o Zona..." class="flex-grow p-3 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500">
+                        <select class="p-3 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500">
+                            <option>Tipo de Propiedad</option>
+                            <option>Apartamento</option>
+                            <option>Casa</option>
+                            <option>Oficina</option>
+                        </select>
+                        <button class="bg-sky-600 text-white p-3 rounded-md font-semibold hover:bg-sky-700 transition duration-300">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========== Propiedades Destacadas =========== -->
+        <section id="propiedades" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-4">Propiedades Destacadas</h2>
+                <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Una selección de nuestros mejores listados. Oportunidades únicas en ubicaciones privilegiadas.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- INICIO DE TARJETA DE PROPIEDAD (EJEMPLO 1) -->
+                    <!-- Para agregar una nueva propiedad, copia y pega este bloque y cambia los datos -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 property-card">
+                        <div class="relative group">
+                            <!-- Contenedor de imágenes -->
+                            <div class="image-carousel-container w-full h-56 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop" alt="Foto 1 del apartamento" class="property-image w-full h-full object-cover transition-opacity duration-300 ease-in-out">
+                                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070&auto=format&fit=crop" alt="Foto 2 del apartamento" class="property-image w-full h-full object-cover transition-opacity duration-300 ease-in-out hidden">
+                                <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=2070&auto=format&fit=crop" alt="Foto 3 del apartamento" class="property-image w-full h-full object-cover transition-opacity duration-300 ease-in-out hidden">
+                            </div>
+                            
+                            <!-- Botones de navegación del carrusel -->
+                            <button class="carousel-prev absolute top-1/2 left-2 -translate-y-1/2 bg-black/40 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                            </button>
+                            <button class="carousel-next absolute top-1/2 right-2 -translate-y-1/2 bg-black/40 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                            </button>
+
+                            <span class="absolute top-4 left-4 bg-sky-600 text-white px-3 py-1 rounded-full text-sm font-semibold z-10">Venta</span>
+                            <span class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold z-10">Nuevo</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Apartamento Moderno en Usaquén</h3>
+                            <p class="text-gray-600 mb-4">Usaquén, Bogotá</p>
+                            <p class="text-2xl font-bold text-sky-700 mb-4">$850.000.000 COP</p>
+                            <div class="flex justify-between items-center text-gray-600 border-t pt-4">
+                                <span class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M11 3a1 1 0 100 2h6a1 1 0 100-2h-6zM11 7a1 1 0 100 2h6a1 1 0 100-2h-6zM5 7a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1V8a1 1 0 00-1-1H5zM3 7a3 3 0 013-3h2a3 3 0 013 3v6a3 3 0 01-3 3H6a3 3 0 01-3-3V7zm11 4a1 1 0 100 2h2a1 1 0 100-2h-2z"/></svg> 3 habs</span>
+                                <span class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.156 2.156A4.5 4.5 0 016.75 1.5h6.5a4.5 4.5 0 012.594.656l-1.344 1.344A2.5 2.5 0 0013.25 3h-6.5a2.5 2.5 0 00-2.344.5L3.063 4.844A4.485 4.485 0 014.156 2.156zM3 6.75v6.5a4.5 4.5 0 004.5 4.5h5a4.5 4.5 0 004.5-4.5v-6.5a2.5 2.5 0 00-2.5-2.5H5.5a2.5 2.5 0 00-2.5 2.5z" clip-rule="evenodd" /></svg> 2 baños</span>
+                                <span class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 2a1 1 0 00-1 1v1a1 1 0 002 0V3a1 1 0 00-1-1zM4 5a1 1 0 011-1h1a1 1 0 010 2H5a1 1 0 01-1-1zm11 0a1 1 0 00-1 1v1a1 1 0 102 0V6a1 1 0 00-1-1h-1zM5 9a1 1 0 00-1 1v1a1 1 0 102 0v-1a1 1 0 00-1-1zm11 0a1 1 0 00-1 1v1a1 1 0 102 0v-1a1 1 0 00-1-1zM6 14a1 1 0 011-1h6a1 1 0 010 2H7a1 1 0 01-1-1zm-2 3a1 1 0 00-1 1v1a1 1 0 102 0v-1a1 1 0 00-1-1zM17 18a1 1 0 01-1-1v-1a1 1 0 112 0v1a1 1 0 01-1 1z" clip-rule="evenodd" /></svg> 120 m²</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FIN DE TARJETA DE PROPIEDAD -->
+
+                    <!-- EJEMPLO 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 property-card">
+                        <div class="relative group">
+                             <!-- Contenedor de imágenes -->
+                            <div class="image-carousel-container w-full h-56 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2070&auto=format&fit=crop" alt="Foto 1 de la casa" class="property-image w-full h-full object-cover transition-opacity duration-300 ease-in-out">
+                                <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070&auto=format&fit=crop" alt="Foto 2 de la casa" class="property-image w-full h-full object-cover transition-opacity duration-300 ease-in-out hidden">
+                            </div>
+                             <!-- Botones de navegación del carrusel -->
+                            <button class="carousel-prev absolute top-1/2 left-2 -translate-y-1/2 bg-black/40 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                            </button>
+                            <button class="carousel-next absolute top-1/2 right-2 -translate-y-1/2 bg-black/40 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                            </button>
+                            <span class="absolute top-4 left-4 bg-sky-600 text-white px-3 py-1 rounded-full text-sm font-semibold z-10">Venta</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Casa Familiar con Jardín</h3>
+                            <p class="text-gray-600 mb-4">Chía, Cundinamarca</p>
+                            <p class="text-2xl font-bold text-sky-700 mb-4">$1.200.000.000 COP</p>
+                            <div class="flex justify-between items-center text-gray-600 border-t pt-4">
+                                <span class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M11 3a1 1 0 100 2h6a1 1 0 100-2h-6zM11 7a1 1 0 100 2h6a1 1 0 100-2h-6zM5 7a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1V8a1 1 0 00-1-1H5zM3 7a3 3 0 013-3h2a3 3 0 013 3v6a3 3 0 01-3 3H6a3 3 0 01-3-3V7zm11 4a1 1 0 100 2h2a1 1 0 100-2h-2z"/></svg> 4 habs</span>
+                                <span class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.156 2.156A4.5 4.5 0 016.75 1.5h6.5a4.5 4.5 0 012.594.656l-1.344 1.344A2.5 2.5 0 0013.25 3h-6.5a2.5 2.5 0 00-2.344.5L3.063 4.844A4.485 4.485 0 014.156 2.156zM3 6.75v6.5a4.5 4.5 0 004.5 4.5h5a4.5 4.5 0 004.5-4.5v-6.5a2.5 2.5 0 00-2.5-2.5H5.5a2.5 2.5 0 00-2.5 2.5z" clip-rule="evenodd" /></svg> 3 baños</span>
+                                <span class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 2a1 1 0 00-1 1v1a1 1 0 002 0V3a1 1 0 00-1-1zM4 5a1 1 0 011-1h1a1 1 0 010 2H5a1 1 0 01-1-1zm11 0a1 1 0 00-1 1v1a1 1 0 102 0V6a1 1 0 00-1-1h-1zM5 9a1 1 0 00-1 1v1a1 1 0 102 0v-1a1 1 0 00-1-1zm11 0a1 1 0 00-1 1v1a1 1 0 102 0v-1a1 1 0 00-1-1zM6 14a1 1 0 011-1h6a1 1 0 010 2H7a1 1 0 01-1-1zm-2 3a1 1 0 00-1 1v1a1 1 0 102 0v-1a1 1 0 00-1-1zM17 18a1 1 0 01-1-1v-1a1 1 0 112 0v1a1 1 0 01-1 1z" clip-rule="evenodd" /></svg> 250 m²</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EJEMPLO 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 property-card">
+                        <div class="relative group">
+                            <!-- Contenedor de imágenes -->
+                            <div class="image-carousel-container w-full h-56 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=2070&auto=format&fit=crop" alt="Foto 1 del penthouse" class="property-image w-full h-full object-cover transition-opacity duration-300 ease-in-out">
+                                <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=1974&auto=format&fit=crop" alt="Foto 2 del penthouse" class="property-image w-full h-full object-cover transition-opacity duration-300 ease-in-out hidden">
+                                <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?q=80&w=2070&auto=format&fit=crop" alt="Foto 3 del penthouse" class="property-image w-full h-full object-cover transition-opacity duration-300 ease-in-out hidden">
+                            </div>
+                             <!-- Botones de navegación del carrusel -->
+                            <button class="carousel-prev absolute top-1/2 left-2 -translate-y-1/2 bg-black/40 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                            </button>
+                            <button class="carousel-next absolute top-1/2 right-2 -translate-y-1/2 bg-black/40 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                            </button>
+                            <span class="absolute top-4 left-4 bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-semibold z-10">Alquiler</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Penthouse de Lujo con Vistas</h3>
+                            <p class="text-gray-600 mb-4">Chapinero Alto, Bogotá</p>
+                            <p class="text-2xl font-bold text-sky-700 mb-4">$15.000.000 COP / Mes</p>
+                             <div class="flex justify-between items-center text-gray-600 border-t pt-4">
+                                <span class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path d="M11 3a1 1 0 100 2h6a1 1 0 100-2h-6zM11 7a1 1 0 100 2h6a1 1 0 100-2h-6zM5 7a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1V8a1 1 0 00-1-1H5zM3 7a3 3 0 013-3h2a3 3 0 013 3v6a3 3 0 01-3 3H6a3 3 0 01-3-3V7zm11 4a1 1 0 100 2h2a1 1 0 100-2h-2z"/></svg> 2 habs</span>
+                                <span class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.156 2.156A4.5 4.5 0 016.75 1.5h6.5a4.5 4.5 0 012.594.656l-1.344 1.344A2.5 2.5 0 0013.25 3h-6.5a2.5 2.5 0 00-2.344.5L3.063 4.844A4.485 4.485 0 014.156 2.156zM3 6.75v6.5a4.5 4.5 0 004.5 4.5h5a4.5 4.5 0 004.5-4.5v-6.5a2.5 2.5 0 00-2.5-2.5H5.5a2.5 2.5 0 00-2.5 2.5z" clip-rule="evenodd" /></svg> 3 baños</span>
+                                <span class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 2a1 1 0 00-1 1v1a1 1 0 002 0V3a1 1 0 00-1-1zM4 5a1 1 0 011-1h1a1 1 0 010 2H5a1 1 0 01-1-1zm11 0a1 1 0 00-1 1v1a1 1 0 102 0V6a1 1 0 00-1-1h-1zM5 9a1 1 0 00-1 1v1a1 1 0 102 0v-1a1 1 0 00-1-1zm11 0a1 1 0 00-1 1v1a1 1 0 102 0v-1a1 1 0 00-1-1zM6 14a1 1 0 011-1h6a1 1 0 010 2H7a1 1 0 01-1-1zm-2 3a1 1 0 00-1 1v1a1 1 0 102 0v-1a1 1 0 00-1-1zM17 18a1 1 0 01-1-1v-1a1 1 0 112 0v1a1 1 0 01-1 1z" clip-rule="evenodd" /></svg> 300 m²</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========== Sección Sobre Mí =========== -->
+        <section id="sobre-mi" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/3">
+                        <!-- Reemplaza esta imagen con una tuya -->
+                        <img src="https://placehold.co/400x400/sky/white?text=Tu+Foto" alt="[Foto profesional del agente inmobiliario]" class="rounded-full shadow-2xl mx-auto">
+                    </div>
+                    <div class="md:w-2/3 text-center md:text-left">
+                        <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Hola, soy [Tu Nombre]</h2>
+                        <p class="text-sky-600 font-semibold mb-4">Tu Agente Inmobiliario de Confianza</p>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Con más de [X] años de experiencia en el dinámico mercado inmobiliario de Bogotá, mi pasión es conectar a personas con propiedades excepcionales que se conviertan en hogares y grandes inversiones. Mi enfoque se basa en la transparencia, la dedicación y un profundo conocimiento del mercado para guiarte en cada paso del camino, asegurando una experiencia fluida y exitosa.</p>
+                        <a href="#contacto" class="bg-slate-800 text-white px-6 py-3 rounded-lg hover:bg-slate-900 transition duration-300">Hablemos de tu proyecto</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========== Testimonios =========== -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                 <h2 class="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-4">Lo que dicen nuestros clientes</h2>
+                 <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">La confianza y satisfacción de nuestros clientes es nuestra mayor recompensa.</p>
+                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                     <!-- Testimonio 1 -->
+                     <div class="bg-gray-50 p-8 rounded-lg">
+                        <img src="https://placehold.co/100x100/e0e7ff/4338ca?text=C.V." alt="[Foto de cliente satisfecho]" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                        <p class="text-gray-600 mb-4 italic">"[Tu Nombre] hizo que vender nuestra casa fuera un proceso increíblemente fácil y rápido. Su profesionalismo y conocimiento del mercado son inigualables. ¡Totalmente recomendado!"</p>
+                        <p class="font-bold text-slate-800">Carlos Vega</p>
+                        <p class="text-sm text-gray-500">Vendedor Satisfecho</p>
+                     </div>
+                     <!-- Testimonio 2 -->
+                     <div class="bg-gray-50 p-8 rounded-lg">
+                        <img src="https://placehold.co/100x100/e0e7ff/4338ca?text=A.P." alt="[Foto de cliente satisfecho]" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                        <p class="text-gray-600 mb-4 italic">"Encontramos el apartamento de nuestros sueños gracias a la paciencia y dedicación de [Tu Nombre]. Entendió perfectamente lo que buscábamos y nos guió en cada paso."</p>
+                        <p class="font-bold text-slate-800">Ana Pérez</p>
+                        <p class="text-sm text-gray-500">Compradora Feliz</p>
+                     </div>
+                     <!-- Testimonio 3 -->
+                      <div class="bg-gray-50 p-8 rounded-lg">
+                        <img src="https://placehold.co/100x100/e0e7ff/4338ca?text=M.R." alt="[Foto de cliente satisfecho]" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                        <p class="text-gray-600 mb-4 italic">"Como inversionista, necesito un agente que entienda de números y oportunidades. [Tu Nombre] me ha conseguido propiedades con un excelente retorno. ¡Un verdadero experto!"</p>
+                        <p class="font-bold text-slate-800">Marcos Rojas</p>
+                        <p class="text-sm text-gray-500">Inversionista</p>
+                     </div>
+                 </div>
+            </div>
+        </section>
+
+        <!-- =========== Sección de Contacto =========== -->
+        <section id="contacto" class="py-20 bg-slate-800 text-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Listo para dar el siguiente paso?</h2>
+                    <p class="max-w-2xl mx-auto mb-12">Ya sea que busques comprar, vender o alquilar, estoy aquí para ayudarte. Contáctame y empecemos a construir tu futuro hoy mismo.</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-white/10 p-8 rounded-lg backdrop-blur-sm">
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <input type="text" placeholder="Tu Nombre" class="w-full p-3 rounded-md bg-white/20 border border-white/30 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-400">
+                            <input type="email" placeholder="Tu Correo Electrónico" class="w-full p-3 rounded-md bg-white/20 border border-white/30 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-400">
+                        </div>
+                        <textarea placeholder="Cuéntame sobre tu proyecto..." rows="5" class="w-full p-3 rounded-md bg-white/20 border border-white/30 placeholder-gray-300 mb-6 focus:outline-none focus:ring-2 focus:ring-sky-400"></textarea>
+                        <div class="text-center">
+                           <button type="submit" class="bg-sky-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-sky-700 transition duration-300">Enviar Mensaje</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =========== Footer =========== -->
+    <footer class="bg-slate-900 text-gray-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-xl font-bold mb-4">[Tu Nombre] - Agente Inmobiliario</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <!-- Reemplaza '#' con los enlaces a tus redes sociales -->
+                <a href="#" class="hover:text-sky-500 transition duration-300">Instagram</a>
+                <a href="#" class="hover:text-sky-500 transition duration-300">Facebook</a>
+                <a href="#" class="hover:text-sky-500 transition duration-300">LinkedIn</a>
+            </div>
+            <p>&copy; 2025 [Tu Nombre Inmobiliaria]. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script para el menú móvil
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú móvil al hacer clic en un enlace
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Script para los carruseles de imágenes de las propiedades
+        document.addEventListener('DOMContentLoaded', () => {
+            const propertyCards = document.querySelectorAll('.property-card');
+
+            propertyCards.forEach(card => {
+                const images = card.querySelectorAll('.property-image');
+                const prevButton = card.querySelector('.carousel-prev');
+                const nextButton = card.querySelector('.carousel-next');
+                let currentIndex = 0;
+
+                function showImage(index) {
+                    images.forEach((img, i) => {
+                        img.classList.toggle('hidden', i !== index);
+                    });
+                }
+
+                prevButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                    showImage(currentIndex);
+                });
+
+                nextButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentIndex = (currentIndex + 1) % images.length;
+                    showImage(currentIndex);
+                });
+                
+                // Inicializar para mostrar la primera imagen
+                showImage(currentIndex);
+            });
+        });
+
+    </script>
+</body>
+</html>
